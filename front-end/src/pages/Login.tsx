@@ -4,7 +4,6 @@ import { Navigate } from 'react-router-dom';
 const Login = (props: { name: string, setName: (name: string) => void }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [navigate, setNavigate] = useState(false);
 
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
@@ -22,8 +21,6 @@ const Login = (props: { name: string, setName: (name: string) => void }) => {
         });
 
         const content = await response.json();
-
-        // setNavigate(true);
 
         props.setName(content.name);
     }
